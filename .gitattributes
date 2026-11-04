@@ -1,0 +1,4 @@
+*.log -text
+*.png binary
+*.gif binary
+*.jar binary

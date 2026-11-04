@@ -1,0 +1,236 @@
+{
+ "summary": {
+  "runs": 14,
+  "correct": 12,
+  "buggy_runs": 5,
+  "bugs_detected": 4,
+  "detection_rate": 0.8,
+  "detection_95ci": [
+   0.376,
+   0.964
+  ],
+  "detected_by_crash_check": 2,
+  "healthy_runs": 9,
+  "healthy_passed": 8,
+  "false_alarms": 0,
+  "false_alarm_rate": 0.0,
+  "false_alarm_95ci": [
+   0.0,
+   0.299
+  ],
+  "unsure": 2,
+  "avg_steps": 2.6,
+  "avg_seconds": 15.8,
+  "rejected_evidence": 0,
+  "model": "qwen3.5:4b",
+  "mode": "with_screenshot",
+  "split": "dev",
+  "date": "2026-11-04"
+ },
+ "cases": [
+  {
+   "test": "create_note",
+   "bug": "save_lost",
+   "expected": "fail",
+   "verdict": "unsure",
+   "explanation": "The model kept giving unusable answers on step 'Enter the title Buy milk': element 2 is labelled 'Title', not ''. Check the list.",
+   "evidence": [],
+   "found_by": "model",
+   "steps": 1,
+   "seconds": 14.9,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "wrong_search",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The screen shows 'Meeting notes' (item 7) as listed, but also shows 'Welcome' (item 6) and 'Shopping list' (item 8), which contradicts the expected result that these should not be listed.",
+   "evidence": [
+    "Welcome",
+    "Meeting notes",
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 17.8,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "crash_settings",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The app crashed or stopped responding.",
+   "evidence": [
+    "11-04 11:04:02.161 11646 11646 E AndroidRuntime: FATAL EXCEPTION: main"
+   ],
+   "found_by": "program",
+   "steps": 1,
+   "seconds": 7.2,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "settings_return",
+   "bug": "crash_settings",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The app crashed or stopped responding.",
+   "evidence": [
+    "11-04 11:04:09.349 11752 11752 E AndroidRuntime: FATAL EXCEPTION: main"
+   ],
+   "found_by": "program",
+   "steps": 1,
+   "seconds": 7.1,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "delete_note",
+   "bug": "missing_delete",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "Could not do step 'Tap Delete': The step says 'Tap Delete', but there is no element labeled 'Delete' on the screen. The only interactive elements are the text field and the SAVE button. Since the required element does not exist, this action cannot be performed.",
+   "evidence": [
+    "Edit note",
+    "Welcome",
+    "SAVE"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 11.9,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen shows the expected result: 'Buy milk' is visible as item #9 in the notes list.",
+   "evidence": [
+    "Buy milk"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 22.4,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "unsure",
+   "explanation": "The expected result states that 'Meeting notes' should be listed while 'Welcome' and 'Shopping' lists should not be present. The screenshot shows 'My notes', a note titled 'Meeting', and the section header 'Meeting notes'. However, there is no visible evidence of 'Welcome' or 'Shopping' lists being ",
+   "evidence": [
+    "My notes",
+    "Meeting",
+    "Meeting notes"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 18.5,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen displays 'Version 1.0' as item #3, which matches the expected result.",
+   "evidence": [
+    "Version 1.0"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 10.8,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "settings_return",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen shows the heading 'My notes' and a list of notes including 'Welcome', 'Meeting notes', and 'Shopping list'. This matches the expected result.",
+   "evidence": [
+    "My notes",
+    "Welcome",
+    "Meeting notes",
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 16.9,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "delete_note",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The expected result states that 'Welcome' is no longer in the notes list. The current screen shows a list of notes containing only 'Meeting notes' and 'Shopping list'. The text 'Welcome' is not visible anywhere on the screen, which means it has been successfully removed from the list.",
+   "evidence": [
+    "Meeting notes",
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 17.2,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "save_lost",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen displays 'Version 1.0' as item #3 in the list of visible elements, which matches the expected result.",
+   "evidence": [
+    "Version 1.0"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 10.6,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "wrong_search",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen shows the expected result: 'Buy milk' is visible in the notes list at item number 9.",
+   "evidence": [
+    "Buy milk"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 24.5,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "crash_settings",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen shows the expected result: 'Buy milk' is visible in the notes list at item number 9.",
+   "evidence": [
+    "Buy milk"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 23.3,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "missing_delete",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The expected result states that 'Meeting notes' should be listed while 'Welcome' and 'Shopping' lists should not be present. The screenshot shows 'My notes', a note titled 'Meeting', and a section header 'Meeting notes'. However, the specific text 'Welcome' and 'Shopping' is not visible on the scree",
+   "evidence": [
+    "Meeting notes"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 18.2,
+   "rejected_evidence": 0
+  }
+ ]
+}

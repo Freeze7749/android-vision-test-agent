@@ -1,0 +1,226 @@
+{
+ "summary": {
+  "runs": 14,
+  "correct": 10,
+  "buggy_runs": 5,
+  "bugs_detected": 5,
+  "detection_rate": 1.0,
+  "detection_95ci": [
+   0.566,
+   1.0
+  ],
+  "detected_by_crash_check": 2,
+  "healthy_runs": 9,
+  "healthy_passed": 5,
+  "false_alarms": 3,
+  "false_alarm_rate": 0.333,
+  "false_alarm_95ci": [
+   0.121,
+   0.646
+  ],
+  "unsure": 1,
+  "avg_steps": 2.4,
+  "avg_seconds": 18.1,
+  "rejected_evidence": 0,
+  "model": "qwen3.5:4b",
+  "mode": "with_screenshot",
+  "split": "dev",
+  "date": "2026-11-04"
+ },
+ "cases": [
+  {
+   "test": "create_note",
+   "bug": "save_lost",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The test case expected to create a new note titled 'Buy milk' and have it appear in the notes list. However, the screen still shows the main notes list with no indication that a new note was created or saved. The steps were performed but the expected result is not visible.",
+   "evidence": [
+    "My notes"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 29.2,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "wrong_search",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The test case requires typing 'Meeting' into the search box, but no input field is visible on the screen. The user typed 'Search text Meeting', which does not match any element. Additionally, the instruction to tap SEARCH was executed before typing, which is incorrect order.",
+   "evidence": [
+    "My notes"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 13.2,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "crash_settings",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The app crashed or stopped responding.",
+   "evidence": [
+    "11-04 10:52:20.396  6488  6488 E AndroidRuntime: FATAL EXCEPTION: main"
+   ],
+   "found_by": "program",
+   "steps": 1,
+   "seconds": 11.7,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "settings_return",
+   "bug": "crash_settings",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The app crashed or stopped responding.",
+   "evidence": [
+    "11-04 10:52:27.882  6622  6622 E AndroidRuntime: FATAL EXCEPTION: main"
+   ],
+   "found_by": "program",
+   "steps": 1,
+   "seconds": 7.4,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "delete_note",
+   "bug": "missing_delete",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The test case requires deleting the note 'Welcome', but the current screen shows an 'Edit note' interface with a 'SAVE' button. There is no visible 'Delete' option on this screen, which means the expected action cannot be performed as described in the test case.",
+   "evidence": [
+    "Welcome"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 11.5,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The test case steps were executed, and the expected result is visible: 'Buy milk' appears in the notes list at position 9.",
+   "evidence": [
+    "Buy milk"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 28.9,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "fail",
+   "explanation": "The test case requires typing 'Meeting' into the search box, but no input field is visible on the screen. The element labeled 'Meeting' appears to be a note title or section header, not an editable text field. Without a clear search input area, the step cannot be performed as described.",
+   "evidence": [
+    "My notes"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 13.5,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The expected text 'Version 1.0' is visible on the screen (element 3), confirming that the Settings page displays correctly as per the test case requirements.",
+   "evidence": [
+    "Version 1.0"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 16.3,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "settings_return",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The test case expected to open Settings and then return to the notes list. The current screen shows the notes list, which matches the expected result.",
+   "evidence": [
+    "My notes"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 18.5,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "delete_note",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "fail",
+   "explanation": "The test case requires deleting the note 'Welcome', which should remove it from the notes list. The current screen shows the 'Edit note' interface with a 'DELETE' button available, indicating that the deletion action has not yet been performed. Since the expected result (note no longer in the list) ",
+   "evidence": [
+    "Edit note"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 11.7,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "save_lost",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The expected text 'Version 1.0' is visible on the screen (element 3), which matches the test case's expectation.",
+   "evidence": [
+    "Version 1.0"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 11.8,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "wrong_search",
+   "expected": "pass",
+   "verdict": "unsure",
+   "explanation": "The model kept giving unusable answers: a pass verdict must list in evidence the numbers of real elements on the screen.",
+   "evidence": [],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 32.5,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "crash_settings",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The test case steps have been completed successfully. The title 'Buy milk' has been entered and saved, and it now appears in the notes list as expected.",
+   "evidence": [
+    "Buy milk"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 33.4,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "missing_delete",
+   "expected": "pass",
+   "verdict": "fail",
+   "explanation": "The test case requires typing 'Meeting' into the search box, but no such input field is visible on the screen. The element labeled 'Meeting' appears to be a note title or category, not an editable text field for searching. Since there is no search box present, the step 'type Search text Meeting' can",
+   "evidence": [
+    "My notes"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 13.6,
+   "rejected_evidence": 0
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{"model": "qwen3.5:4b", "image": true, "task": "Turn Wi-Fi on or off", "chosen": "Network & internet | Mobile, Wi\u2011Fi, hotspot", "ok": true, "s": 31.9}
+{"model": "qwen3.5:4b", "image": true, "task": "Pair a new Bluetooth headset", "chosen": "Connected devices | Bluetooth, pairing", "ok": true, "s": 2.6}
+{"model": "qwen3.5:4b", "image": true, "task": "Change which app opens web links by default", "chosen": "Apps | Assistant, recent apps, default apps", "ok": true, "s": 2.4}
+{"model": "qwen3.5:4b", "image": true, "task": "See a notification I dismissed earlier", "chosen": "Notifications | Notification history, conversation", "ok": true, "s": 2.5}
+{"model": "qwen3.5:4b", "image": true, "task": "Check how much charge is left", "chosen": "Battery | 100%", "ok": true, "s": 2.5}
+{"model": "qwen3.5:4b", "image": true, "task": "Find out how much disk space is free", "chosen": "Storage | 40% used - 9.53 GB free", "ok": true, "s": 2.4}
+{"model": "qwen3.5:4b", "image": true, "task": "Turn down the ringtone volume", "chosen": "Sound & vibration | Volume, haptics, Do Not Distur", "ok": true, "s": 2.4}
+{"model": "qwen3.5:4b", "image": true, "task": "Find a setting by typing its name", "chosen": "Search settings", "ok": true, "s": 2.6}
+{"model": "qwen3.5:4b", "image": true, "task": "Manage my Google account", "chosen": "Profile picture, double tap to open Google Account", "ok": true, "s": 2.3}
+{"model": "qwen3.5:4b", "image": true, "task": "Share my mobile connection with a laptop", "chosen": "Network & internet | Mobile, Wi\u2011Fi, hotspot", "ok": true, "s": 2.5}
+{"model": "qwen3.5:4b", "image": false, "task": "Turn Wi-Fi on or off", "chosen": "Network & internet | Mobile, Wi\u2011Fi, hotspot", "ok": true, "s": 1.6}
+{"model": "qwen3.5:4b", "image": false, "task": "Pair a new Bluetooth headset", "chosen": "Connected devices | Bluetooth, pairing", "ok": true, "s": 1.0}
+{"model": "qwen3.5:4b", "image": false, "task": "Change which app opens web links by default", "chosen": "Apps | Assistant, recent apps, default apps", "ok": true, "s": 1.0}
+{"model": "qwen3.5:4b", "image": false, "task": "See a notification I dismissed earlier", "chosen": "Notifications | Notification history, conversation", "ok": true, "s": 1.0}
+{"model": "qwen3.5:4b", "image": false, "task": "Check how much charge is left", "chosen": "Battery | 100%", "ok": true, "s": 0.9}
+{"model": "qwen3.5:4b", "image": false, "task": "Find out how much disk space is free", "chosen": "Storage | 40% used - 9.53 GB free", "ok": true, "s": 1.0}
+{"model": "qwen3.5:4b", "image": false, "task": "Turn down the ringtone volume", "chosen": "Sound & vibration | Volume, haptics, Do Not Distur", "ok": true, "s": 0.9}
+{"model": "qwen3.5:4b", "image": false, "task": "Find a setting by typing its name", "chosen": "Search settings", "ok": true, "s": 0.9}
+{"model": "qwen3.5:4b", "image": false, "task": "Manage my Google account", "chosen": "Profile picture, double tap to open Google Account", "ok": true, "s": 0.8}
+{"model": "qwen3.5:4b", "image": false, "task": "Share my mobile connection with a laptop", "chosen": "Network & internet | Mobile, Wi\u2011Fi, hotspot", "ok": true, "s": 1.2}
+{"model": "qwen3.5:4b", "q": "Is the Airplane mode switch turned on?", "truth": "yes", "said": "yes", "s": 2.8}
+{"model": "qwen3.5:4b", "q": "Is the Airplane mode switch turned on?", "truth": "no", "said": "no", "s": 2.7}
+{"model": "qwen3.5:4b", "q": "Does this screen use a dark background?", "truth": "yes", "said": "yes", "s": 2.9}
+{"model": "qwen3.5:4b", "q": "Does this screen use a dark background?", "truth": "no", "said": "no", "s": 2.4}
+{"model": "qwen3.5:4b", "q": "Is this the Internet settings page?", "truth": "yes", "said": "yes", "s": 3.3}
+{"model": "qwen3.5:4b", "q": "Is this the Battery settings page?", "truth": "no", "said": "no", "s": 2.8}
+{"model": "qwen3.5:4b", "q": "Is this the Display settings page?", "truth": "yes", "said": "yes", "s": 3.0}
+{"model": "qwen3.5:4b", "q": "Is this the Bluetooth settings page?", "truth": "no", "said": "no", "s": 2.4}
+{"model": "gemma3:4b", "image": true, "task": "Turn Wi-Fi on or off", "chosen": "Network & internet | Mobile, Wi\u2011Fi, hotspot", "ok": true, "s": 17.0}
+{"model": "gemma3:4b", "image": true, "task": "Pair a new Bluetooth headset", "chosen": "Connected devices | Bluetooth, pairing", "ok": true, "s": 1.6}
+{"model": "gemma3:4b", "image": true, "task": "Change which app opens web links by default", "chosen": "Apps | Assistant, recent apps, default apps", "ok": true, "s": 1.4}
+{"model": "gemma3:4b", "image": true, "task": "See a notification I dismissed earlier", "chosen": "Notifications | Notification history, conversation", "ok": true, "s": 1.4}
+{"model": "gemma3:4b", "image": true, "task": "Check how much charge is left", "chosen": "Battery | 100%", "ok": true, "s": 1.3}
+{"model": "gemma3:4b", "image": true, "task": "Find out how much disk space is free", "chosen": "Storage | 43% used - 9.12 GB free", "ok": true, "s": 1.6}
+{"model": "gemma3:4b", "image": true, "task": "Turn down the ringtone volume", "chosen": "Sound & vibration | Volume, haptics, Do Not Distur", "ok": true, "s": 1.5}
+{"model": "gemma3:4b", "image": true, "task": "Find a setting by typing its name", "chosen": "Search settings", "ok": true, "s": 1.5}
+{"model": "gemma3:4b", "image": true, "task": "Manage my Google account", "chosen": "Profile picture, double tap to open Google Account", "ok": true, "s": 1.3}
+{"model": "gemma3:4b", "image": true, "task": "Share my mobile connection with a laptop", "chosen": "Network & internet | Mobile, Wi\u2011Fi, hotspot", "ok": true, "s": 1.7}
+{"model": "gemma3:4b", "image": false, "task": "Turn Wi-Fi on or off", "chosen": "Network & internet | Mobile, Wi\u2011Fi, hotspot", "ok": true, "s": 1.1}
+{"model": "gemma3:4b", "image": false, "task": "Pair a new Bluetooth headset", "chosen": "Connected devices | Bluetooth, pairing", "ok": true, "s": 0.8}
+{"model": "gemma3:4b", "image": false, "task": "Change which app opens web links by default", "chosen": "Apps | Assistant, recent apps, default apps", "ok": true, "s": 0.7}
+{"model": "gemma3:4b", "image": false, "task": "See a notification I dismissed earlier", "chosen": "Notifications | Notification history, conversation", "ok": true, "s": 0.7}
+{"model": "gemma3:4b", "image": false, "task": "Check how much charge is left", "chosen": "Battery | 100%", "ok": true, "s": 0.7}
+{"model": "gemma3:4b", "image": false, "task": "Find out how much disk space is free", "chosen": "Storage | 43% used - 9.12 GB free", "ok": true, "s": 0.8}
+{"model": "gemma3:4b", "image": false, "task": "Turn down the ringtone volume", "chosen": "Sound & vibration | Volume, haptics, Do Not Distur", "ok": true, "s": 0.7}
+{"model": "gemma3:4b", "image": false, "task": "Find a setting by typing its name", "chosen": "Search settings", "ok": true, "s": 0.9}
+{"model": "gemma3:4b", "image": false, "task": "Manage my Google account", "chosen": "Profile picture, double tap to open Google Account", "ok": true, "s": 0.7}
+{"model": "gemma3:4b", "image": false, "task": "Share my mobile connection with a laptop", "chosen": "Network & internet | Mobile, Wi\u2011Fi, hotspot", "ok": true, "s": 0.9}
+{"model": "gemma3:4b", "q": "Is the Airplane mode switch turned on?", "truth": "yes", "said": "no", "s": 1.7}
+{"model": "gemma3:4b", "q": "Is the Airplane mode switch turned on?", "truth": "no", "said": "no", "s": 1.9}
+{"model": "gemma3:4b", "q": "Does this screen use a dark background?", "truth": "yes", "said": "yes", "s": 1.6}
+{"model": "gemma3:4b", "q": "Does this screen use a dark background?", "truth": "no", "said": "yes", "s": 1.5}
+{"model": "gemma3:4b", "q": "Is this the Internet settings page?", "truth": "yes", "said": "yes", "s": 5.5}
+{"model": "gemma3:4b", "q": "Is this the Battery settings page?", "truth": "no", "said": "no", "s": 1.8}
+{"model": "gemma3:4b", "q": "Is this the Display settings page?", "truth": "yes", "said": "yes", "s": 2.1}
+{"model": "gemma3:4b", "q": "Is this the Bluetooth settings page?", "truth": "no", "said": "no", "s": 1.6}

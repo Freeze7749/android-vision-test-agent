@@ -1,0 +1,228 @@
+{
+ "summary": {
+  "runs": 14,
+  "correct": 8,
+  "buggy_runs": 5,
+  "bugs_detected": 4,
+  "detection_rate": 0.8,
+  "detection_95ci": [
+   0.376,
+   0.964
+  ],
+  "detected_by_crash_check": 2,
+  "healthy_runs": 9,
+  "healthy_passed": 4,
+  "false_alarms": 1,
+  "false_alarm_rate": 0.111,
+  "false_alarm_95ci": [
+   0.02,
+   0.435
+  ],
+  "unsure": 5,
+  "avg_steps": 2.6,
+  "avg_seconds": 20.1,
+  "rejected_evidence": 0,
+  "model": "qwen3.5:4b",
+  "mode": "with_screenshot",
+  "split": "dev",
+  "date": "2026-11-04"
+ },
+ "cases": [
+  {
+   "test": "create_note",
+   "bug": "save_lost",
+   "expected": "fail",
+   "verdict": "unsure",
+   "explanation": "The test case requires entering a title 'Buy milk' and saving it, but the current screen still shows the main notes list without any new note being created or saved. The expected result is not visible.",
+   "evidence": [],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 29.4,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "wrong_search",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The test case says to type in the search box, but there is no input field on this screen. The only text that looks like a search box is 'Meeting' which is just a label for a note, not an actual input field where you can type.",
+   "evidence": [
+    "My notes"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 17.8,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "crash_settings",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The app crashed or stopped responding.",
+   "evidence": [
+    "11-04 10:56:53.550  9064  9064 E AndroidRuntime: FATAL EXCEPTION: main"
+   ],
+   "found_by": "program",
+   "steps": 1,
+   "seconds": 7.4,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "settings_return",
+   "bug": "crash_settings",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The app crashed or stopped responding.",
+   "evidence": [
+    "11-04 10:57:01.066  9170  9170 E AndroidRuntime: FATAL EXCEPTION: main"
+   ],
+   "found_by": "program",
+   "steps": 1,
+   "seconds": 7.4,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "delete_note",
+   "bug": "missing_delete",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The test case says to 'tap Delete', but there is no Delete button on this screen. The only action available is the SAVE button. Since the expected action cannot be performed, I must finish with a fail verdict.",
+   "evidence": [
+    "Edit note"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 12.1,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The test case steps have been completed successfully. The title 'Buy milk' was entered and saved, and it now appears in the notes list (element 9). This matches the expected result.",
+   "evidence": [
+    "Buy milk"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 34.6,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "unsure",
+   "explanation": "The test case says to type in the search box, but there is no input field on this screen. The only text that looks like a search box is 'Meeting' which is just a label for a note. I cannot perform the 'type' action because there is no actual input field visible.",
+   "evidence": [],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 18.0,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen shows 'Version 1.0' at element [3], which matches the expected result.",
+   "evidence": [
+    "Version 1.0"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 18.1,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "settings_return",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The test case steps have been completed. The screen shows the expected result: the 'My notes' heading and the list of notes (Welcome, Meeting notes, Shopping list).",
+   "evidence": [
+    "My notes",
+    "Welcome",
+    "Meeting notes",
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 23.7,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "delete_note",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "fail",
+   "explanation": "The test case expects to see 'Welcome' in the notes list, but the current screen only shows 'Meeting notes' and 'Shopping list'. The expected result is not visible.",
+   "evidence": [
+    "Meeting notes",
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 19.1,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "save_lost",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen shows 'Version 1.0' at element [3], which matches the expected result.",
+   "evidence": [
+    "Version 1.0"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 16.4,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "wrong_search",
+   "expected": "pass",
+   "verdict": "unsure",
+   "explanation": "The test case says to tap Save, but the screen shows a greyed-out SAVE button that looks disabled. The expected result (Buy milk in the notes list) hasn't appeared yet, so I can't finish with pass or fail.",
+   "evidence": [],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 23.9,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "crash_settings",
+   "expected": "pass",
+   "verdict": "unsure",
+   "explanation": "The test case says to tap Save, but the screen shows a greyed-out SAVE button that looks disabled. The expected result (Buy milk in the notes list) hasn't appeared yet, so I can't finish with pass or fail.",
+   "evidence": [],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 23.2,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "missing_delete",
+   "expected": "pass",
+   "verdict": "unsure",
+   "explanation": "The test case requires typing 'Meeting' into a search box, but there is no visible search input field on this screen. The only text that can be typed is 'Meeting' in element 2, which is not a search box. Since the required search functionality is missing from the UI, I cannot proceed with the test s",
+   "evidence": [
+    "Meeting",
+    "SEARCH",
+    "NEW NOTE",
+    "SETTINGS",
+    "Meeting notes"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 30.6,
+   "rejected_evidence": 0
+  }
+ ]
+}

@@ -1,0 +1,243 @@
+{
+ "summary": {
+  "runs": 14,
+  "correct": 8,
+  "buggy_runs": 5,
+  "bugs_detected": 5,
+  "detection_rate": 1.0,
+  "detection_95ci": [
+   0.566,
+   1.0
+  ],
+  "detected_by_crash_check": 2,
+  "healthy_runs": 9,
+  "healthy_passed": 3,
+  "false_alarms": 6,
+  "false_alarm_rate": 0.667,
+  "false_alarm_95ci": [
+   0.354,
+   0.879
+  ],
+  "unsure": 0,
+  "avg_steps": 2.8,
+  "avg_seconds": 16.0,
+  "rejected_evidence": 0,
+  "model": "qwen3.5:4b",
+  "mode": "elements_only",
+  "split": "dev",
+  "date": "2026-11-04"
+ },
+ "cases": [
+  {
+   "test": "create_note",
+   "bug": "save_lost",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The expected result 'Buy milk appears in the notes list' is not met. The screen shows a list of existing notes ('Meeting notes', 'Shopping list') but does not display the new note 'Buy milk'. The test steps indicate that actions were taken to create a new note (tapping NEW NOTE, SETTINGS, Welcome, M",
+   "evidence": [
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 22.8,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "wrong_search",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The screen shows 'Meeting notes' (item 7) but also displays 'Welcome' (item 6) and 'Shopping list' (item 8), which contradicts the requirement that only Meeting notes should be listed.",
+   "evidence": [
+    "Welcome",
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 17.2,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "crash_settings",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The app crashed or stopped responding.",
+   "evidence": [
+    "11-04 11:12:01.928 16458 16458 E AndroidRuntime: FATAL EXCEPTION: main"
+   ],
+   "found_by": "program",
+   "steps": 1,
+   "seconds": 7.1,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "settings_return",
+   "bug": "crash_settings",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The app crashed or stopped responding.",
+   "evidence": [
+    "11-04 11:12:09.098 16565 16565 E AndroidRuntime: FATAL EXCEPTION: main"
+   ],
+   "found_by": "program",
+   "steps": 1,
+   "seconds": 7.1,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "delete_note",
+   "bug": "missing_delete",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "Could not do step 'Tap Delete': The step requires tapping 'Delete', but the available elements are 'Edit note', 'Welcome', and 'SAVE'. There is no element labeled 'Delete' on the screen.",
+   "evidence": [
+    "Edit note",
+    "Welcome",
+    "SAVE"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 11.2,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "fail",
+   "explanation": "The expected result 'Buy milk appears in the notes list' is not met. The screen shows a sequence of actions (taps) leading to selecting 'Buy milk', but it does not show the final state where 'Buy milk' is listed in the notes.",
+   "evidence": [
+    "Buy milk"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 22.0,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "fail",
+   "explanation": "The expected result states that 'Meeting notes' should be listed while 'Welcome' and 'Shopping list' are not. The screen shows 'My notes', 'Meeting [tap, type]', 'SEARCH [tap]', 'NEW NOTE [tap]', 'SETTINGS [tap]', and 'Meeting notes [tap]'. Although 'Meeting notes' is present, the presence of 'My no",
+   "evidence": [
+    "My notes",
+    "Meeting",
+    "SEARCH",
+    "NEW NOTE",
+    "SETTINGS",
+    "Meeting notes"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 18.9,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen displays 'Version 1.0' as item number 3, which matches the expected result.",
+   "evidence": [
+    "Version 1.0"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 10.8,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "settings_return",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "fail",
+   "explanation": "The screen shows 'My notes' as the heading, but instead of a notes list, it displays a series of interactive elements (Search text box, SEARCH button, NEW NOTE button, SETTINGS button, Welcome button, Meeting notes item, Shopping list item). The expected result requires showing the notes list, which",
+   "evidence": [
+    "My notes"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 17.2,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "delete_note",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The expected result states that 'Welcome' is no longer in the notes list. The screen shows a list of items: 'My notes', 'Meeting notes', and 'Shopping list'. The item 'Welcome' is not present in this list.",
+   "evidence": [
+    "My notes",
+    "Meeting notes",
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 16.5,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "save_lost",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen displays 'Version 1.0' as item number 3, which matches the expected result.",
+   "evidence": [
+    "Version 1.0"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 10.8,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "wrong_search",
+   "expected": "pass",
+   "verdict": "fail",
+   "explanation": "The expected result 'Buy milk appears in the notes list' is not met. The screen shows a sequence of actions (taps) leading to selecting 'Buy milk', but it does not show the final state where 'Buy milk' is listed in the notes.",
+   "evidence": [
+    "Buy milk"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 22.1,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "crash_settings",
+   "expected": "pass",
+   "verdict": "fail",
+   "explanation": "The expected result 'Buy milk appears in the notes list' is not met. The screen shows a sequence of actions (taps) leading to selecting 'Buy milk', but it does not show the final state where 'Buy milk' is listed in the notes.",
+   "evidence": [
+    "Buy milk"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 21.9,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "missing_delete",
+   "expected": "pass",
+   "verdict": "fail",
+   "explanation": "The expected result states that 'Meeting notes' should be listed while 'Welcome' and 'Shopping list' are not. The screen shows 'My notes', 'Meeting [tap, type]', 'SEARCH [tap]', 'NEW NOTE [tap]', 'SETTINGS [tap]', and 'Meeting notes [tap]'. Although 'Meeting notes' is present, the presence of 'My no",
+   "evidence": [
+    "My notes",
+    "Meeting",
+    "SEARCH",
+    "NEW NOTE",
+    "SETTINGS",
+    "Meeting notes"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 18.5,
+   "rejected_evidence": 0
+  }
+ ]
+}
