@@ -1,0 +1,14 @@
+{
+  "project": {
+    "key": "PROJ"
+  },
+  "issuetype": {
+    "name": "Bug"
+  },
+  "summary": "open-the-note-called-welcome-change-its failed: Open the note called Welcome; Change its title to Hello; Tap Save. Expected: Hel",
+  "labels": [
+    "auto-test",
+    "found-by-model"
+  ],
+  "description": "h3. Explanation\nThe expected result states that 'Hello' should appear in the notes list and 'Welcome' should not. The screen shows 'Welcome', 'Meeting notes', and 'Shopping list'. 'Hello' is missing from the list.\nh3. Steps\n# Open the note called Welcome\n# Change its title to Hello\n# Tap Save\n# Check the expected result\nh3. Evidence\n* {{Welcome}}\n* {{Meeting notes}}\n* {{Shopping list}}"
+}

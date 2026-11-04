@@ -1,0 +1,301 @@
+{
+ "summary": {
+  "runs": 18,
+  "correct": 17,
+  "buggy_runs": 6,
+  "bugs_detected": 6,
+  "detection_rate": 1.0,
+  "detection_95ci": [
+   0.61,
+   1.0
+  ],
+  "detected_by_crash_check": 1,
+  "healthy_runs": 12,
+  "healthy_passed": 11,
+  "false_alarms": 0,
+  "false_alarm_rate": 0.0,
+  "false_alarm_95ci": [
+   0.0,
+   0.243
+  ],
+  "unsure": 1,
+  "avg_steps": 2.8,
+  "avg_seconds": 16.8,
+  "rejected_evidence": 0,
+  "model": "qwen3.5:4b",
+  "mode": "with_screenshot",
+  "split": "test",
+  "date": "2026-11-04"
+ },
+ "cases": [
+  {
+   "test": "edit_note",
+   "bug": "edit_not_saved",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The expected result states that 'Hello' should appear in the notes list and 'Welcome' should not. The screen shows 'Welcome', 'Meeting notes', and 'Shopping list'. Since 'Hello' is missing from the list, this is a failure.",
+   "evidence": [
+    "Welcome",
+    "Meeting notes",
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 24.5,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "count",
+   "bug": "count_wrong",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The screen shows 'My notes: 4' as the heading, and lists three visible notes ('Welcome', 'Meeting notes', 'Shopping list'). The count in the heading (4) does not match the number of visible items listed (3).",
+   "evidence": [
+    "My notes: 4",
+    "Welcome",
+    "Meeting notes",
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 23.8,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "wrong_version",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The expected result states the page should show 'Version 1.0', but the screen displays 'Version 0.9' (element 3).",
+   "evidence": [
+    "Version 0.9"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 12.4,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "titles_visible",
+   "bug": "invisible_titles",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The expected result states that the note titles 'Welcome', 'Meeting notes', and 'Shopping list' should be clearly visible on the screen. However, the screenshot only shows the main menu with options like 'SEARCH', 'NEW NOTE', and 'SETTINGS'. The actual note content or titles are not displayed.",
+   "evidence": [
+    "My notes",
+    "Search text",
+    "SEARCH",
+    "NEW NOTE",
+    "SETTINGS",
+    "Welcome",
+    "Meeting notes",
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 1,
+   "seconds": 7.6,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "delete_note",
+   "bug": "crash_on_delete",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The app crashed or stopped responding.",
+   "evidence": [
+    "11-04 11:24:38.958 24022 24022 E AndroidRuntime: FATAL EXCEPTION: main"
+   ],
+   "found_by": "program",
+   "steps": 2,
+   "seconds": 13.2,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "freeze_search",
+   "expected": "fail",
+   "verdict": "fail",
+   "explanation": "The screen shows 'Meeting notes' listed, but also shows 'Welcome' and 'Shopping list'. The expected result states that 'Welcome' and 'Shopping list' should not be listed.",
+   "evidence": [
+    "Meeting notes",
+    "Welcome",
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 17.9,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "edit_note",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "unsure",
+   "explanation": "The screen shows 'Hello' in the notes list (element 6), which matches the expected result. However, there is no indication of a 'Welcome' note being present or absent; the expected result states that 'Welcome does not', but this cannot be verified from the visible content.",
+   "evidence": [
+    "Hello"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 24.2,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "count",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen shows 'My notes: 3' as the heading, and lists three notes ('Welcome', 'Meeting notes', 'Shopping list'). The number of listed notes (3) matches the number in the heading.",
+   "evidence": [
+    "My notes: 3"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 22.7,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "titles_visible",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen shows the note titles 'Welcome', 'Meeting notes', and 'Shopping list' clearly listed below the action buttons, matching the expected result.",
+   "evidence": [
+    "Welcome",
+    "Meeting notes",
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 1,
+   "seconds": 6.6,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen displays 'Version 1.0' as the third element in the list, matching the expected result.",
+   "evidence": [
+    "Version 1.0"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 11.4,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "delete_note",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The expected result states that 'Welcome' is no longer in the notes list. The screen shows a list containing only 'Meeting notes' and 'Shopping list'. Since 'Welcome' is not visible among the listed items, the condition is met.",
+   "evidence": [
+    "Meeting notes",
+    "Shopping list"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 17.9,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen shows 'Meeting notes' as item 6, which matches the expected result. However, there is no visible evidence that 'Welcome' and 'Shopping' lists are absent from the screen.",
+   "evidence": [
+    "Meeting notes"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 18.3,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "edit_not_saved",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen displays 'Version 1.0' as the third element in the list, which matches the expected result.",
+   "evidence": [
+    "Version 1.0"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 11.8,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "count_wrong",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen shows the 'My notes' interface with a list of notes. The expected result is that 'Buy milk' appears in the notes list. Element 9 explicitly labels 'Buy milk' as an item in this list, confirming its presence.",
+   "evidence": [
+    "Buy milk"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 23.9,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "search",
+   "bug": "wrong_version",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen shows 'Meeting notes' as element 6, which matches the expected result that it should be listed. However, there is no visible evidence of 'Welcome' or 'Shopping' lists being absent from the screen; their absence cannot be confirmed from what is shown.",
+   "evidence": [
+    "Meeting notes"
+   ],
+   "found_by": "model",
+   "steps": 3,
+   "seconds": 18.2,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "invisible_titles",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen displays 'Version 1.0' as the third element in the list, which matches the expected result.",
+   "evidence": [
+    "Version 1.0"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 11.9,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "create_note",
+   "bug": "crash_on_delete",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen shows the expected result: 'Buy milk' is visible as item #9 in the notes list.",
+   "evidence": [
+    "Buy milk"
+   ],
+   "found_by": "model",
+   "steps": 4,
+   "seconds": 23.5,
+   "rejected_evidence": 0
+  },
+  {
+   "test": "version",
+   "bug": "freeze_search",
+   "expected": "pass",
+   "verdict": "pass",
+   "explanation": "The screen displays 'Version 1.0' as the third element in the list, which matches the expected result.",
+   "evidence": [
+    "Version 1.0"
+   ],
+   "found_by": "model",
+   "steps": 2,
+   "seconds": 11.9,
+   "rejected_evidence": 0
+  }
+ ]
+}
